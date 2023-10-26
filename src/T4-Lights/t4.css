@@ -1,0 +1,85 @@
+:root {
+  --darkcolor: #282828;
+  --lightcolor: #fff;
+  --glowcolor: #F9EBB2;
+}
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Fira Sans', sans-serif;
+}
+
+img {
+  width: 20vw;
+  height: 20vh;
+  cursor: pointer;
+  transform: scaleY(-1);
+}
+
+section {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+section,
+div {
+  justify-content: center;
+  display: flex;
+}
+
+div {
+  align-items: center;
+  flex-direction: column;
+}
+
+span {
+  font-weight: bold;
+  font-size: 2em;
+}
+
+.counter-and-light {
+  align-self: center;
+  position: absolute;
+}
+
+.wire {
+  background-color: var(--darkcolor);
+  width: 2px;
+  height: 50vh;
+  justify-self: flex-start;
+}
+
+.counter {
+  padding: 10px;
+  border: 2px solid;
+  border-radius: 10%;
+  margin: 10px;
+}
+
+
+/* Theme and effects */
+.glow {
+  filter: drop-shadow(0px 0px 5vw var(--glowcolor));
+}
+
+.light {
+  background-color: var(--lightcolor);
+  color: var(--darkcolor);
+  border-color: var(--darkcolor);
+}
+
+.dark {
+  background-color: var(--darkcolor);
+  color: var(--lightcolor);
+  border-color: var(--lightcolor);
+}
+
+.dark,
+.light,
+.glow {
+  -webkit-transition: background-color 800ms cubic-bezier(.59, .1, .27, 1.2);
+  -ms-transition: background-color 800ms cubic-bezier(.59, .1, .27, 1.2);
+  transition: background-color 800ms cubic-bezier(.59, .1, .27, 1.2);
+}
