@@ -91,3 +91,14 @@ span {
   -ms-transition: background-color 800ms cubic-bezier(.59, .1, .27, 1.2);
   transition: background-color 800ms cubic-bezier(.59, .1, .27, 1.2);
 }
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .wire {
+    height: 60vh;
+  }
+
+  .base {
+    height: 1vh;
+  }
+}
