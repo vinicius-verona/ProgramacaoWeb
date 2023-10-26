@@ -44,6 +44,14 @@ span {
   position: absolute;
 }
 
+.base {
+  position: absolute;
+  width: 2.5vw;
+  height: 0.5vw;
+  border-radius: 0 0 100% 100%;
+  background-color: var(--darkcolor);
+}
+
 .wire {
   background-color: var(--darkcolor);
   width: 2px;

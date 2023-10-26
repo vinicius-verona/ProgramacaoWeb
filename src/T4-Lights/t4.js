@@ -2,6 +2,7 @@ let nmbClicks = 0;
 const section = document.querySelector('section');
 const counter = document.querySelector('div.counter');
 const wire = document.querySelector('div.wire');
+const base = document.querySelector('div.base');
 const span = document.querySelector('span');
 const light = document.querySelector('img');
 
@@ -16,6 +17,9 @@ const btnOnClick = () => {
     wire.classList.remove('dark');
     wire.classList.add('light');
 
+    base.classList.remove('dark');
+    base.classList.add('light');
+
     section.classList.remove('light');
     section.classList.add('dark');
     light.classList.remove("glow");
@@ -28,6 +32,9 @@ const btnOnClick = () => {
 
     wire.classList.remove('light');
     wire.classList.add('dark');
+
+    base.classList.remove('light');
+    base.classList.add('dark');
 
     section.classList.remove('dark');
     section.classList.add('light');
