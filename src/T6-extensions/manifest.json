@@ -1,0 +1,33 @@
+{
+  "name": "Extension - Web Programming",
+  "version": "0.0.1",
+  "description": "",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.br/*",
+        "http://*.br/*"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ],
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "/images/*.gif"
+      ],
+      "matches": [
+        "https://*.br/*",
+        "http://*.br/*"
+      ]
+    }
+  ],
+  "manifest_version": 3
+}

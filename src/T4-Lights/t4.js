@@ -4,13 +4,21 @@ const counter = document.querySelector('div.counter');
 const wire = document.querySelector('div.wire');
 const base = document.querySelector('div.base');
 const span = document.querySelector('span');
-const light = document.querySelector('img');
+const light_off = document.querySelector('img#off');
+const light_on = document.querySelector('img#on');
 
-const btnOnClick = () => {
+const btnOnClick = (event) => {
+  event.currentTarget.removeEventListener('click', btnOnClick);
   nmbClicks++;
 
+  const lights = [light_off, light_on];
+  lights[nmbClicks % 2].addEventListener('click', btnOnClick);
+
   if (nmbClicks % 2 === 0) {
-    light.src = './img/light-off.svg';
+    light_off.classList.remove('hidden');
+    light_on.classList.add('hidden');
+    light_on.classList.remove("glow");
+
     counter.classList.remove('light');
     counter.classList.add('dark');
 
@@ -22,10 +30,10 @@ const btnOnClick = () => {
 
     section.classList.remove('light');
     section.classList.add('dark');
-    light.classList.remove("glow");
   } else {
-    light.src = './img/light-on.svg';
-    light.classList.add("glow");
+    light_off.classList.add('hidden');
+    light_on.classList.remove('hidden');
+    light_on.classList.add("glow");
 
     counter.classList.remove('dark');
     counter.classList.add('light');
@@ -44,4 +52,4 @@ const btnOnClick = () => {
 }
 
 
-light.addEventListener('click', btnOnClick);
+light_off.addEventListener('click', btnOnClick);

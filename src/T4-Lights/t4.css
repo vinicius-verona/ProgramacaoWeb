@@ -92,6 +92,10 @@ span {
   transition: background-color 800ms cubic-bezier(.59, .1, .27, 1.2);
 }
 
+.hidden {
+  display: none;
+}
+
 /* Responsiveness */
 @media (max-width: 768px) {
   .wire {
