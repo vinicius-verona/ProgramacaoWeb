@@ -1,0 +1,11 @@
+img {
+  height: 200px;
+}
+
+body {
+  touch-action: none;
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+  margin: 0;
+}
