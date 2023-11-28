@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="t10.css">
+
+  <!-- Link to fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,200;0,400;0,500;0,600;0,700;0,800;1,100&display=swap"
+    rel="stylesheet">
+  <script src="main.js" defer></script>
+  <title>Document</title>
+</head>
+
+<body>
+
+  <h1>Fake Data Generator</h1>
+  <section id="main-container">
+
+    <div id="request-form" class="choices-container">
+      <div class="choices"></div>
+      <div id="request-size-area" class="inputArea hidden">
+        <input placeholder="Set the size of the request" id="request-size" class="request" type="number" />
+        <button id="submit-button" class="request">Submit</button>
+      </div>
+    </div>
+    <div class="divider"> </div>
+    <div class="response">
+      <textarea readonly="true" id="responseArea" wrap="hard"></textarea>
+    </div>
+
+  </section>
+
+</body>
+
+</html>

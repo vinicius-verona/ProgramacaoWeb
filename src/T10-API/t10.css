@@ -1,0 +1,183 @@
+:root {
+  --dark: #160F29;
+  --white: #fff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--dark);
+  padding: 2% 5% 5% 5%;
+  font-family: 'Fira Sans', sans-serif;
+  height: 100vh;
+}
+
+h1 {
+  text-align: center;
+  color: var(--white);
+  font-size: 50px;
+}
+
+#main-container {
+  width: 100%;
+  height: 90%;
+  margin-top: 3.5rem;
+
+  justify-content: space-between;
+  align-items: stretch;
+
+  display: flex;
+  flex-direction: row;
+}
+
+.choices {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+
+  justify-content: space-around;
+  align-items: center;
+  flex: 1;
+}
+
+.choices-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+.inputArea {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+}
+
+.request {
+  padding: 1rem;
+  border-radius: 2rem;
+  margin: 1rem;
+
+  outline: 2px solid var(--white);
+  background-color: var(--dark);
+  color: var(--white);
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.request::-webkit-input-placeholder {
+  font-weight: 500;
+  color: var(--white);
+}
+
+.request[type=number]::-webkit-outer-spin-button,
+.request[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+button:hover.request {
+  color: var(--dark);
+  background-color: var(--white);
+  font-weight: 800;
+}
+
+.divider {
+  background-color: var(--white);
+  width: 0.5rem;
+  border-radius: 2rem;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+/* Reponse */
+.response {
+  flex: 1;
+}
+
+.response textarea {
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  resize: none;
+  background-color: #1d182c;
+
+  border-radius: 2rem;
+  outline: 2px solid var(--white);
+  color: var(--white);
+}
+
+.response textarea::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 2rem;
+}
+
+.response textarea::-webkit-scrollbar-track {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.response textarea::-webkit-scrollbar-thumb {
+  border-radius: 2rem;
+  background-color: var(--white);
+}
+
+
+/* Choice */
+.choice {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem;
+  padding: 1rem;
+  border-radius: 2rem;
+  border-color: var(--white);
+  border-width: 2;
+  border-style: solid;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 100%;
+}
+
+.choice img {
+  width: 10rem;
+}
+
+.choice span {
+  color: var(--white);
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.selectedChoice {
+  background: var(--white);
+  cursor: pointer;
+}
+
+.selectedChoice span {
+  color: var(--dark);
+  font-weight: 800;
+}
+
+/* Hover */
+.choice:hover {
+  background: var(--white);
+  cursor: pointer;
+}
+
+.choice:hover span {
+  color: var(--dark);
+  font-weight: 800;
+}
