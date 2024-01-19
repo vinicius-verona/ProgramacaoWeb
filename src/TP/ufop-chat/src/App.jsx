@@ -1,24 +1,27 @@
 import { useEffect, useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
+import Itacolomi from './assets/Itacolomi.svg'
+
 import './App.css'
+import SideBar from './components/SideBar/SideBar';
 
-// To use API
-// fetch('/api/anyid')
-//   .then((res) => res.json())
-//   .then((res) => setLstring(res.text));
+const CentralArea = () => {
+  return <div className='central'>
 
-// To use sessionStorage
-// if (debug)
-//   sessionStorage.setItem('thisRandomKey@1', JSON.stringify({ id: "123dfwsdfsdf", value: 12, chat: [{ user: "oi", robot: "oi" }] }));
+    <h1> Seu ajudante pessoal de resoluções da <br /> <span className='UFOP-Name'>UFOP</span></h1>
 
+  </div>
+}
 
 function App() {
-  // const [count, setCount] = useState(0)
-
   return (
-    <>
-    </>
+    <div className='outter-main'>
+      <img src={Itacolomi} className='mountains-BG' />
+      <div className='main'>
+        <SideBar side='left' />
+        <CentralArea />
+        <SideBar side='right' />
+      </div>
+    </div>
   )
 }
 
