@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="t12.css">
+
+  <!-- Link to fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,200;0,400;0,500;0,600;0,700;0,800;1,100&display=swap"
+    rel="stylesheet">
+  <script src="main.js" defer></script>
+  <title>Login</title>
+</head>
+
+<body>
+
+
+  <section class="Info-Msg">
+
+    <div class="error hidden">
+      <img src="./assets/error.svg" />
+      <p> - Usuário ou senha incorretos</p>
+    </div>
+
+    <div class="warning hidden">
+      <img src="./assets/warning.svg" />
+      <p> - Usuário já cadastrado</p>
+    </div>
+
+    <div class="success hidden">
+      <img src="./assets/success.svg" />
+      <p> - Usuário logado com sucesso</p>
+    </div>
+
+  </section>
+
+
+  <section class="Login-Container">
+
+    <img src="./assets/user.svg" alt="user icon" />
+
+
+    <form class="Login-Form">
+      <h1>Login</h1>
+
+      <input type="email" placeholder="e-mail" id="user">
+      <input type="password" placeholder="password" id="pwd">
+
+      <div class="Submition-Buttons">
+        <button id="bttn-Login">Login</button>
+        <button id="bttn-Cadastro">Cadastro</button>
+      </div>
+
+    </form>
+
+  </section>
+
+
+</body>
+
+</html>

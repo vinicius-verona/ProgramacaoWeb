@@ -1,0 +1,140 @@
+:root {
+  --dark: #160F29;
+  --error: #A40606;
+  --warning: #D98324;
+  --success: #00A878;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--dark);
+  padding: 2% 5% 5% 5%;
+  font-family: 'Fira Sans', sans-serif;
+  height: 100vh;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.Login-Container {
+  background-color: azure;
+  width: 20vw;
+  height: 50vh;
+  min-width: 242px;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.Login-Container>img {
+  width: 10vw;
+  min-width: 121px;
+  filter: invert(6%) sepia(30%) saturate(2313%) hue-rotate(227deg) brightness(98%) contrast(100%);
+}
+
+.Login-Form {
+  display: flex;
+  flex-direction: column;
+}
+
+.Login-Form>input {
+  border-radius: 8px;
+  padding: 10px;
+  margin: 2%;
+}
+
+h1 {
+  color: var(--dark);
+  text-align: center;
+  font-weight: 800;
+  padding: 10px;
+  margin: 2%;
+}
+
+.Submition-Buttons {
+  display: flex;
+  flex: 1;
+}
+
+.Submition-Buttons>button {
+  flex: 1;
+  padding: 10px;
+  margin: 2%;
+  border-radius: 10px;
+  background-color: azure;
+  border-color: var(--dark);
+  font-weight: 600;
+}
+
+.Submition-Buttons>button:hover {
+  font-weight: 800;
+  background-color: var(--dark);
+  color: azure;
+  cursor: pointer;
+}
+
+.Info-Msg {
+  width: 20vw;
+  min-width: 121px;
+  display: flex;
+  top: 30px;
+  position: absolute;
+}
+
+.error,
+.warning,
+.success {
+  display: flex;
+  padding: 20px;
+  height: 50px;
+  width: 100%;
+  min-width: 121px;
+  border-radius: 10px;
+  color: azure;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: center;
+}
+
+
+.error {
+  background-color: var(--error);
+}
+
+.warning {
+  background-color: var(--warning);
+}
+
+.success {
+  background-color: var(--success);
+}
+
+.error>img,
+.warning>img,
+.success>img {
+  width: 2em;
+  height: 2em;
+  stroke: aliceblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hidden {
+  display: none;
+}
+
+path {
+  align-items: center;
+  justify-content: center;
+}
