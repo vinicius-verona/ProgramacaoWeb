@@ -1,11 +1,9 @@
 #root {
-  /* margin: 0 auto; */
-  /* padding: 0; */
-  /* text-align: center; */
-  /* height: 100%; */
   --ufop-color: #962038;
   --dark-text: #211E2F;
+  --yellow-ish: #FDF0D5;
   --filter-ufop-color: invert(19%) sepia(58%) saturate(2644%) hue-rotate(326deg) brightness(87%) contrast(96%);
+  --filter-yellowish-color: invert(90%) sepia(93%) saturate(228%) hue-rotate(307deg) brightness(104%) contrast(98%);
 }
 
 

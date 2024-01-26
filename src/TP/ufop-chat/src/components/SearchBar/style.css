@@ -16,12 +16,12 @@
   padding: 10px 20px;
   background-color: transparent;
   border: 0px;
-  color: var(--ufop-color);
+  color: var(--yellow-ish);
   width: 30vw;
 }
 
 .searchbar-input::placeholder {
-  color: var(--ufop-color);
+  color: var(--yellow-ish);
 }
 
 .searchbar-input:focus {
@@ -31,4 +31,8 @@
 .arrow {
   padding: 10px 20px;
   filter: var(--filter-ufop-color)
+}
+
+.arrow:hover {
+  filter: var(--filter-yellowish-color);
 }
