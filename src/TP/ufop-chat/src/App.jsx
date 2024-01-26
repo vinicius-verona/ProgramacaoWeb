@@ -3,11 +3,13 @@ import Itacolomi from './assets/Itacolomi.svg'
 
 import './App.css'
 import SideBar from './components/SideBar/SideBar';
+import SearchBar from './components/SearchBar/SearchBar';
 
 const CentralArea = () => {
   return <div className='central'>
 
     <h1> Seu ajudante pessoal de resoluções da <br /> <span className='UFOP-Name'>UFOP</span></h1>
+    <SearchBar />
 
   </div>
 }

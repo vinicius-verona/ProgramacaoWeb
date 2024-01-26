@@ -1,0 +1,34 @@
+.searchbar {
+  width: 30vw;
+  color: var(--ufop-color);
+  border-radius: 30px;
+  border: 5px solid var(--ufop-color);
+  font-weight: bold;
+  position: absolute;
+  bottom: 10vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-around;
+}
+
+.searchbar-input {
+  font-size: large;
+  padding: 10px 20px;
+  background-color: transparent;
+  border: 0px;
+  color: var(--ufop-color);
+  width: 30vw;
+}
+
+.searchbar-input::placeholder {
+  color: var(--ufop-color);
+}
+
+.searchbar-input:focus {
+  outline: transparent;
+}
+
+.arrow {
+  padding: 10px 20px;
+  filter: var(--filter-ufop-color)
+}
