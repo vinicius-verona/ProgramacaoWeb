@@ -5,7 +5,7 @@
   border: 5px solid var(--ufop-color);
   font-weight: bold;
   position: absolute;
-  bottom: 10vh;
+  bottom: 5vh;
   overflow: hidden;
   display: flex;
   justify-content: space-around;

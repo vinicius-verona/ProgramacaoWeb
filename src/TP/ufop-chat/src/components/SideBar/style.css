@@ -8,13 +8,14 @@
 }
 
 .leftbar {
-  /* background-color: blue; */
+  flex: 0.2;
+  /* background-color: var(--ufop-color); */
 }
 
 .rightbar {
   align-items: flex-end;
-  /* background-color: green; */
   justify-content: space-between;
+  flex: 0.2;
 }
 
 .logo {

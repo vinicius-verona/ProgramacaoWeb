@@ -4,34 +4,53 @@ import Itacolomi from './assets/Itacolomi.svg'
 import './App.css'
 import SideBar from './components/SideBar/SideBar';
 import SearchBar from './components/SearchBar/SearchBar';
+import Chat, { createNewChat, getInputAnswer } from './components/Chat/Chat';
+
 
 const CentralArea = () => {
-  // const searchBarRef = useRef();
 
-  // useEffect(() => {
-  //   const handleDocumentClick = (event) => {
-  //     // Check if the clicked element is inside the SearchBar component
-  //     if (searchBarRef.current && searchBarRef.current.contains(event.target)) {
-  //       // Handle the click inside the SearchBar
-  //       console.log("clicked inside");
-  //     }
-  //   };
+  const [isInChat, setIsInChat] = useState(false);
+  const [chatPageContent, setChatPageContent] = useState(undefined);
 
-  //   document.addEventListener('click', handleDocumentClick);
+  const handleChat = async (input) => {
+    if (!isInChat) {
+      const chat = await createNewChat(input);
+      if (chat !== null) {
+        setChatPageContent(chat);
+        setIsInChat(true);
+      }
 
-  //   return () => {
-  //     document.removeEventListener('click', handleDocumentClick);
-  //   };
-  // }, [searchBarRef]);
+    } else {
+      try {
+        const msg = await getInputAnswer(input, chatPageContent.id);
+
+        // Given a new msg, update the chat log for the page, initially, creates a shallow copy of the 
+        // previous state and than update the log in state.chat
+        setChatPageContent(prevChat => ({
+          ...prevChat,
+          chat: [...prevChat.chat, ...msg]
+        }));
+
+      } catch (error) {
+        console.error("Error getting input answer:", error);
+      }
+    }
+  };
 
 
   return <div className='central'>
 
-    <h1> Seu ajudante pessoal de resoluções da <br /> <span className='UFOP-Name'>UFOP</span></h1>
-    {/* <SearchBar ref={searchBarRef} /> */}
-    <SearchBar inputCB={(input) => console.log(input + " was the input")} />
+    <h2 className='top-title'>Chat <span className='UFOP-title'>UFOP</span></h2>
+
+    {!isInChat ?
+      (<h1> Seu ajudante pessoal de resoluções da <br /> <span className='UFOP-Name'>UFOP</span></h1>) :
+      (<Chat content={chatPageContent} />)
+    }
+
+    <SearchBar inputCB={handleChat} />
 
   </div>
+
 }
 
 function App() {

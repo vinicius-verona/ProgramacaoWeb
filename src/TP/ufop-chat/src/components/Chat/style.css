@@ -1,0 +1,86 @@
+.chat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 80vh;
+  width: 100%;
+  overflow: scroll;
+}
+
+.role-ufop,
+.role-user {
+  box-shadow: 0 0 20px var(--dark-text-light);
+  border: 0.5px solid var(--dark-text);
+  border-radius: 10px;
+  padding: 10px 20px;
+
+
+  width: 100%;
+
+  text-wrap: pretty;
+  text-align: justify;
+  flex: 1;
+}
+
+.role-ufop:focus,
+.role-user:focus {
+  outline: none;
+}
+
+.role-ufop {
+  background-color: var(--yellow-ish);
+  color: var(--dark-text);
+}
+
+.role-user {
+  background-color: var(--ufop-color);
+  color: var(--yellow-ish);
+}
+
+
+.message-container-ufop,
+.message-container-user {
+  display: flex;
+  width: 100%;
+  max-width: 30vw;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0px;
+}
+
+
+.icon-ufop,
+.icon-user {
+  height: 30px;
+  padding: 10px;
+}
+
+.icon-ufop {
+  fill: var(--yellow-ish);
+  stroke: var(--ufop-color);
+  stroke-width: 1px;
+}
+
+.icon-user {
+  fill: var(--ufop-color);
+  stroke: var(--yellow-ish);
+  stroke-width: 1px;
+}
+
+
+/* Style scroll */
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: none;
+}
+
+/* For Edge */
+*::-webkit-scrollbar {
+  width: 0px;
+}
