@@ -82,9 +82,9 @@ function Message({ role, content }) {
 
   return (
     <section className={`message-container-${role}`}>
-      {role === 'ufop' ? <RobotIcon svgClassName={`icon-${role}`} /> : null}
+      {role === 'ufop' ? <RobotIcon svgClassName={`icon-${role}`} /> : <div className='whitespace' />}
       <div className={`role-${role}`}>{content}</div>
-      {role === 'user' ? <UserIcon svgClassName={`icon-${role}`} /> : null}
+      {role === 'user' ? <UserIcon svgClassName={`icon-${role}`} /> : <div className='whitespace' />}
     </section>
   );
 

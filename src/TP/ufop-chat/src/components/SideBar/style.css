@@ -9,7 +9,7 @@
 
 .leftbar {
   flex: 0.2;
-  /* background-color: var(--ufop-color); */
+  background-color: var(--ufop-color);
 }
 
 .rightbar {
@@ -31,4 +31,52 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.new-chat {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  outline: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  background-color: var(--ufop-color);
+  border: 1px solid var(--yellow-ish);
+  color: var(--yellow-ish);
+  cursor: pointer;
+}
+
+.new-chat:hover {
+  background-color: var(--yellow-ish);
+  border: 1px solid var(--dark-text);
+  color: var(--dark-text);
+  font-weight: 900;
+}
+
+
+.log {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.log p {
+  color: var(--yellow-ish);
+  font-weight: 200;
+}
+
+.page-container {
+  display: flex;
+  /* align-items: center; */
+  justify-content: space-around;
+  overflow: hidden;
+  max-height: 1rem;
+  padding: 10px 20px;
+  background-color: var(--white-light);
+  border-radius: 10px;
+  width: 100%;
+}
+
+.page-container::after {
+  content: '...'
 }
