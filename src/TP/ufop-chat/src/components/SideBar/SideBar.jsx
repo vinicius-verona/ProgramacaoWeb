@@ -11,10 +11,11 @@ const PageContainer = ({ content }) => {
 
   return (
     <div className="page-container">
-      {/* <PageIcon svgClassName="page-icon" /> */}
-      {/* <span> */}
-      {content.chat[0].text}
-      {/* </span> */}
+      <div className='page-content'>
+        <span>
+          {content.chat[0].text}
+        </span>
+      </div>
     </div>
   );
 
@@ -23,19 +24,32 @@ const PageContainer = ({ content }) => {
 const LeftBar = () => {
   const [pages, setPages] = useState(Object.keys(sessionStorage));
 
-  // const handleNewPage = () => {
-  //   setPages(prevPages => [...pages, ])
-  // }
+  useEffect(() => {
+    const handleStorageChange = () => {
+      // Update pages whenever sessionStorage changes
+      setPages(Object.keys(sessionStorage));
+      console.log("new-page-created")
+    };
+
+    // Add event listener for changes in sessionStorage
+    window.addEventListener('storage', handleStorageChange);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener('storage', handleStorageChange);
+    };
+  }, []); // Empty dependency array means this effect runs once after the initial render
+
 
   return (
     <div className='sidebar leftbar'>
-      <button className='new-chat'><AddIcon /> Novo chat</button>
+      <button className='new-chat'><AddIcon />Novo chat</button>
 
       <section className="log">
         <p>Hoje</p>
-        {pages.map(page => {
+        {pages.map((page, idx) => {
           let page_content = JSON.parse(sessionStorage.getItem(page));
-          return <PageContainer content={page_content} />
+          return <PageContainer content={page_content} key={"page-" + idx} />
         })}
       </section>
     </div>

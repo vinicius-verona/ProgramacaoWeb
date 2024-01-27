@@ -36,7 +36,7 @@
 .new-chat {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: start;
   outline: none;
   border-radius: 10px;
   padding: 10px 20px;
@@ -53,6 +53,10 @@
   font-weight: 900;
 }
 
+.new-chat svg {
+  margin-right: 10px;
+}
+
 
 .log {
   display: flex;
@@ -63,20 +67,38 @@
 .log p {
   color: var(--yellow-ish);
   font-weight: 200;
+  text-align: start;
+  width: calc(100% + 20px);
 }
 
 .page-container {
   display: flex;
-  /* align-items: center; */
-  justify-content: space-around;
-  overflow: hidden;
-  max-height: 1rem;
-  padding: 10px 20px;
+  align-items: center;
+  justify-content: center;
+  height: 2rem;
+  max-height: 2rem;
   background-color: var(--white-light);
   border-radius: 10px;
   width: 100%;
+  margin: 5px 0px;
+  padding: 0px 20px;
+  overflow: hidden;
 }
 
-.page-container::after {
-  content: '...'
+.page-content {
+  padding: 20px 0px;
+  width: 100%;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  max-height: 1.5rem;
+  text-overflow: ellipsis;
+}
+
+.page-container span {
+  width: 100%;
+}
+
+.page-content::after {
+  content: '...';
 }
