@@ -18,6 +18,8 @@ function sortPages(a, b) {
 }
 
 export const PagesProvider = ({ children }) => {
+  const [chatPageContent, setChatPageContent] = useState(undefined);
+  const [updated, setUpdatePages] = useState(false);
   const [pages, setPages] = useState(Object.keys(sessionStorage).map(key => {
     return {
       id: key,
@@ -25,7 +27,6 @@ export const PagesProvider = ({ children }) => {
     }
   }).sort(sortPages));
 
-  const [updated, setUpdatePages] = useState(false);
 
   useEffect(() => {
     setPages(Object.keys(sessionStorage).map(key => {
@@ -44,8 +45,12 @@ export const PagesProvider = ({ children }) => {
     setUpdatePages(true);
   }
 
+  const changePage = (chat) => {
+    setChatPageContent(chat);
+  }
+
   return (
-    <PagesContext.Provider value={{ page: pages, updatePages: updatePages }}>
+    <PagesContext.Provider value={{ page: pages, chatPageContent: chatPageContent, updatePages: updatePages, changePage: changePage }}>
       {children}
     </PagesContext.Provider>
   );

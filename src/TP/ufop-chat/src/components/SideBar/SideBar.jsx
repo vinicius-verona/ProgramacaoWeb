@@ -8,9 +8,10 @@ import AddIcon from '../../assets/add-icon'
 import { usePages } from '../../Context/PageContext'
 
 const PageContainer = ({ content }) => {
+  const changePage = usePages().changePage;
 
   return (
-    <div className="page-container">
+    <div className='page-container' onClick={() => changePage(content)}>
       <div className='page-content'>
         <span>
           {content.chat[0].text}

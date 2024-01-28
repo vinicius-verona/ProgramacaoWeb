@@ -11,17 +11,19 @@ import { usePages } from './Context/PageContext';
 
 const CentralArea = () => {
 
-  const { _, updatePages } = usePages();
+  const { _, chatPageContent, updatePages, changePage } = usePages();
 
   const [isInChat, setIsInChat] = useState(false);
-  const [chatPageContent, setChatPageContent] = useState(undefined);
+  const [chatContent, setChatContent] = useState(undefined);
 
   const handleChat = async (input) => {
+
     if (!isInChat) {
       const chat = await createNewChat(input);
       updatePages();
       if (chat !== null) {
-        setChatPageContent(chat);
+        changePage(chat);
+        setChatContent(chat);
         setIsInChat(true);
       }
 
@@ -31,7 +33,7 @@ const CentralArea = () => {
 
         // Given a new msg, update the chat log for the page, initially, creates a shallow copy of the 
         // previous state and than update the log in state.chat
-        setChatPageContent(prevChat => ({
+        setChatContent(prevChat => ({
           ...prevChat,
           chat: [...prevChat.chat, ...msg]
         }));
@@ -40,16 +42,22 @@ const CentralArea = () => {
         console.error("Error getting input answer:", error);
       }
     }
+
   };
+
+  useEffect(() => {
+    if (chatContent?.id !== chatPageContent?.id)
+      setChatContent(chatPageContent);
+  }, [chatPageContent])
 
 
   return <div className='central'>
 
     <h2 className='top-title'>Chat <span className='UFOP-title'>UFOP</span></h2>
 
-    {!isInChat ?
+    {!isInChat && !chatContent ?
       (<h1> Seu ajudante pessoal de resoluções da <br /> <span className='UFOP-Name'>UFOP</span></h1>) :
-      (<Chat content={chatPageContent} />)
+      (<Chat content={chatContent} />)
     }
 
     <SearchBar inputCB={handleChat} />

@@ -39,7 +39,6 @@ export async function getInputAnswer(input, chatid) {
 
   sessionStorage.removeItem(chatid);
   sessionStorage.setItem(chatid, JSON.stringify(chat));
-  // sessionStorage.setItem('UpdateFlag', 'updated');
 
   return [{ role: "user", text: input }, response];
 
@@ -76,7 +75,6 @@ export async function createNewChat(input) {
   };
 
   sessionStorage.setItem(id + '-chat-ufop', JSON.stringify(chat));
-  // sessionStorage.setItem('UpdateFlag', 'updated');
   return chat;
 
 }
