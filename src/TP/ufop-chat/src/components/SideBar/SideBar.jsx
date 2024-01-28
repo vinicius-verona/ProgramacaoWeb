@@ -5,7 +5,7 @@ import FB from '../../assets/facebook.svg'
 import IG from '../../assets/instagram.svg'
 import WWW from '../../assets/www.svg'
 import AddIcon from '../../assets/add-icon'
-import PageIcon from '../../assets/page-icon'
+import { usePages } from '../../Context/PageContext'
 
 const PageContainer = ({ content }) => {
 
@@ -22,24 +22,7 @@ const PageContainer = ({ content }) => {
 }
 
 const LeftBar = () => {
-  const [pages, setPages] = useState(Object.keys(sessionStorage));
-
-  useEffect(() => {
-    const handleStorageChange = () => {
-      // Update pages whenever sessionStorage changes
-      setPages(Object.keys(sessionStorage));
-      console.log("new-page-created")
-    };
-
-    // Add event listener for changes in sessionStorage
-    window.addEventListener('storage', handleStorageChange);
-
-    // Clean up the event listener when the component unmounts
-    return () => {
-      window.removeEventListener('storage', handleStorageChange);
-    };
-  }, []); // Empty dependency array means this effect runs once after the initial render
-
+  const pages = usePages().page;
 
   return (
     <div className='sidebar leftbar'>
@@ -48,7 +31,7 @@ const LeftBar = () => {
       <section className="log">
         <p>Hoje</p>
         {pages.map((page, idx) => {
-          let page_content = JSON.parse(sessionStorage.getItem(page));
+          let page_content = JSON.parse(sessionStorage.getItem(page.id));
           return <PageContainer content={page_content} key={"page-" + idx} />
         })}
       </section>

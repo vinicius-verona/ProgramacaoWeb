@@ -5,9 +5,13 @@ import './App.css'
 import SideBar from './components/SideBar/SideBar';
 import SearchBar from './components/SearchBar/SearchBar';
 import Chat, { createNewChat, getInputAnswer } from './components/Chat/Chat';
+import { PagesProvider } from './Context/PageContext';
+import { usePages } from './Context/PageContext';
 
 
 const CentralArea = () => {
+
+  const { _, updatePages } = usePages();
 
   const [isInChat, setIsInChat] = useState(false);
   const [chatPageContent, setChatPageContent] = useState(undefined);
@@ -15,6 +19,7 @@ const CentralArea = () => {
   const handleChat = async (input) => {
     if (!isInChat) {
       const chat = await createNewChat(input);
+      updatePages();
       if (chat !== null) {
         setChatPageContent(chat);
         setIsInChat(true);
@@ -55,14 +60,16 @@ const CentralArea = () => {
 
 function App() {
   return (
-    <div className='outter-main'>
-      <img src={Itacolomi} className='mountains-BG' />
-      <div className='main'>
-        <SideBar side='left' />
-        <CentralArea />
-        <SideBar side='right' />
+    <PagesProvider>
+      <div className='outter-main'>
+        <img src={Itacolomi} className='mountains-BG' />
+        <div className='main'>
+          <SideBar side='left' />
+          <CentralArea />
+          <SideBar side='right' />
+        </div>
       </div>
-    </div>
+    </PagesProvider>
   )
 }
 

@@ -1,6 +1,5 @@
 import { useEffect, useState, useRef } from 'react'
 import './style.css'
-
 import RobotIcon from '../../assets/robot-icon.jsx';
 import UserIcon from '../../assets/user-icon.jsx';
 
@@ -40,12 +39,14 @@ export async function getInputAnswer(input, chatid) {
 
   sessionStorage.removeItem(chatid);
   sessionStorage.setItem(chatid, JSON.stringify(chat));
+  // sessionStorage.setItem('UpdateFlag', 'updated');
 
   return [{ role: "user", text: input }, response];
 
 }
 
 export async function createNewChat(input) {
+
 
   let id = generateUniqueRandomString();
 
@@ -69,11 +70,13 @@ export async function createNewChat(input) {
   }];
 
   let chat = {
-    id: id,
+    id: id + '-chat-ufop',
+    creation_date: new Date(),
     chat: chatlog
   };
 
-  sessionStorage.setItem(id, JSON.stringify(chat));
+  sessionStorage.setItem(id + '-chat-ufop', JSON.stringify(chat));
+  // sessionStorage.setItem('UpdateFlag', 'updated');
   return chat;
 
 }
