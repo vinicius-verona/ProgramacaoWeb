@@ -10,9 +10,11 @@ import { usePages } from '../../Context/PageContext'
 const PageContainer = ({ content }) => {
   const changePage = usePages().changePage;
 
+  // if chatPageContent.id === content.id add class 'selected' to div
+
   return (
     <div className='page-container' onClick={() => changePage(content)}>
-      <div className='page-content'>
+      <div className={'page-content'}>
         <span>
           {content.chat[0].text}
         </span>
@@ -23,11 +25,17 @@ const PageContainer = ({ content }) => {
 }
 
 const LeftBar = () => {
-  const pages = usePages().page;
+  // const { pages, _, __, changePage } = usePages();
+  const { pages, changePage, ..._ } = usePages();
+
+
+  const createNewPage = () => {
+    changePage(undefined);
+  }
 
   return (
     <div className='sidebar leftbar'>
-      <button className='new-chat'><AddIcon />Novo chat</button>
+      <button className='new-chat' onClick={createNewPage}><AddIcon />Novo chat</button>
 
       <section className="log">
         <p>Hoje</p>

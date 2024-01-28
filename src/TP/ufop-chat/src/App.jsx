@@ -46,8 +46,14 @@ const CentralArea = () => {
   };
 
   useEffect(() => {
-    if (chatContent?.id !== chatPageContent?.id)
+    if (chatContent?.id !== chatPageContent?.id) {
       setChatContent(chatPageContent);
+      setIsInChat(true);
+    }
+
+    if (!chatPageContent)
+      setIsInChat(false);
+
   }, [chatPageContent])
 
 

@@ -50,7 +50,7 @@ export const PagesProvider = ({ children }) => {
   }
 
   return (
-    <PagesContext.Provider value={{ page: pages, chatPageContent: chatPageContent, updatePages: updatePages, changePage: changePage }}>
+    <PagesContext.Provider value={{ pages: pages, chatPageContent: chatPageContent, updatePages: updatePages, changePage: changePage }}>
       {children}
     </PagesContext.Provider>
   );

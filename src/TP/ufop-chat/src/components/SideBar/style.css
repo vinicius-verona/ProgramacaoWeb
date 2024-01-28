@@ -83,6 +83,7 @@
   margin: 5px 0px;
   padding: 0px 20px;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .page-content {
