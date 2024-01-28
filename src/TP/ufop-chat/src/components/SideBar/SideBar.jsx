@@ -8,13 +8,16 @@ import AddIcon from '../../assets/add-icon'
 import { usePages } from '../../Context/PageContext'
 
 const PageContainer = ({ content }) => {
-  const changePage = usePages().changePage;
+  const { chatPageContent, changePage, ..._ } = usePages();
+  const [isSelected, setIsSelected] = useState(false);
 
-  // if chatPageContent.id === content.id add class 'selected' to div
+  useEffect(() => {
+    content.id === chatPageContent?.id ? setIsSelected(true) : setIsSelected(false);
+  }, [chatPageContent])
 
   return (
     <div className='page-container' onClick={() => changePage(content)}>
-      <div className={'page-content'}>
+      <div className={'page-content ' + (isSelected ? 'selected' : '')}>
         <span>
           {content.chat[0].text}
         </span>
@@ -25,7 +28,6 @@ const PageContainer = ({ content }) => {
 }
 
 const LeftBar = () => {
-  // const { pages, _, __, changePage } = usePages();
   const { pages, changePage, ..._ } = usePages();
 
 
@@ -43,6 +45,11 @@ const LeftBar = () => {
           let page_content = JSON.parse(sessionStorage.getItem(page.id));
           return <PageContainer content={page_content} key={"page-" + idx} />
         })}
+      </section>
+
+      <section className='about'>
+        <div className='divider'></div>
+        <p>Desenvolvido por <br /><span>Vinicius Verona</span></p>
       </section>
     </div>
   )
