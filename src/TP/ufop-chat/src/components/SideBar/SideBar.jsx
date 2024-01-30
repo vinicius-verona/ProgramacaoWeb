@@ -27,7 +27,7 @@ const PageContainer = ({ content }) => {
 
 }
 
-const LeftBar = () => {
+const LeftBar = ({ toggle }) => {
   const { pages, changePage, ..._ } = usePages();
 
 
@@ -35,9 +35,12 @@ const LeftBar = () => {
     changePage(undefined);
   }
 
+  console.log(toggle)
+
   return (
-    <div className='sidebar leftbar'>
-      <button className='new-chat' onClick={createNewPage}><AddIcon />Novo chat</button>
+    // <div className={}>
+    <div className={'sidebar leftbar' + (toggle ? ' hidden' : ' showMenu')}>
+      <button className='new-chat' onClick={createNewPage}><AddIcon svgClassName={'AddIcon'} />Novo chat</button>
 
       <section className="log">
         <p>Hoje</p>
@@ -52,6 +55,7 @@ const LeftBar = () => {
         <p>Desenvolvido por <br /><span>Vinicius Verona</span></p>
       </section>
     </div>
+    // </div>
   )
 }
 
@@ -70,10 +74,19 @@ const RightBar = () => {
 
 
 function SideBar({ side }) {
+
+  const [toggleSideBar, setToggleSideBar] = useState(true);
+
   if (side.toLowerCase() === 'left')
-    return <LeftBar />
+    return <>
+      <LeftBar toggle={toggleSideBar} />
+      {/* Hamburger menu icon */}
+      <button className={`hamburger_toggle ${!toggleSideBar ? ' toggled' : ' '}`} onClick={() => setToggleSideBar(!toggleSideBar)}>
+        <span className={'hamburger_icon'}></span>
+      </button>
+    </>
   else
-    return <RightBar />
+    return <RightBar toggle={toggleSideBar} />
 }
 
 export default SideBar

@@ -29,7 +29,7 @@
   flex: 2;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -47,7 +47,7 @@ h1>span {
 .top-title {
   color: var(--dark-text);
   text-align: center;
-  position: absolute;
+  /* position: absolute; */
   top: 2vh;
 }
 
