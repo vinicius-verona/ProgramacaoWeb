@@ -1,7 +1,5 @@
 .sidebar {
   height: 95vh;
-  /* flex: 1; */
-  /* flex-grow: 1; */
   display: flex;
   flex-direction: column;
   padding: 2.5vh 50px 2.5vh 50px;
@@ -203,10 +201,13 @@
   opacity: 1;
 }
 
+.rightbar.hidden {
+  flex: 0
+}
+
 /* Hamburguer toggle icon */
 .hamburger_toggle {
   display: flex;
-  /* position: relative; */
   position: absolute;
   z-index: 2;
   background-color: transparent;
@@ -233,7 +234,6 @@
   top: 8px;
 }
 
-/* give the span element and related pseudo-elements the appearance of white lines */
 .hamburger_icon,
 .hamburger_icon::before,
 .hamburger_icon::after {
@@ -256,32 +256,11 @@
   left: 0px;
 }
 
-
 .toggled .hamburger_icon::before,
 .toggled .hamburger_icon::after {
   content: "";
   left: 10px;
 }
-
-/* rotate middle dash of hamburger */
-/* .toggled .hamburger_icon {
-  transform: rotate(-45deg);
-  background-color: var(--ufop-color);
-} */
-
-
-/* hide the top dash */
-/* .toggled .hamburger_icon::before {
-  transform: scale(0);
-} */
-
-/* rotate bottom dash of hamburger counter clockwise */
-/* .toggled .hamburger_icon::after {
-  top: 1px;
-  transform: rotate(90deg);
-  background-color: var(--ufop-color);
-}
- */
 
 .hamburger_icon,
 .hamburger_icon::before,

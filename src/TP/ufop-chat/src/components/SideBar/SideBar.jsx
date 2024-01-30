@@ -36,7 +36,6 @@ const LeftBar = ({ toggle }) => {
   }
 
   return (
-    // <div className={}>
     <div className={'sidebar leftbar' + (toggle ? ' hidden' : ' showMenu')}>
       <button className='new-chat' onClick={createNewPage}><AddIcon svgClassName={'AddIcon'} />Novo chat</button>
 
@@ -53,13 +52,12 @@ const LeftBar = ({ toggle }) => {
         <p>Desenvolvido por <br /><span>Vinicius Verona</span></p>
       </section>
     </div>
-    // </div>
   )
 }
 
-const RightBar = () => {
+const RightBar = ({ toggle }) => {
   return (
-    <div className='sidebar rightbar'>
+    <div className={'sidebar rightbar' + (toggle ? ' hidden' : ' showMenu')}>
       <img src={UFOP} className='logo' />
       <section className='social-network-section'>
         <a href='https://www.facebook.com/minhaUFOP' > <img src={FB} className='sn-logo' /></a>
