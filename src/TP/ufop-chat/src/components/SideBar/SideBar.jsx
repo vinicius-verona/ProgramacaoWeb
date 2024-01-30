@@ -35,8 +35,6 @@ const LeftBar = ({ toggle }) => {
     changePage(undefined);
   }
 
-  console.log(toggle)
-
   return (
     // <div className={}>
     <div className={'sidebar leftbar' + (toggle ? ' hidden' : ' showMenu')}>

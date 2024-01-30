@@ -43,7 +43,16 @@
   justify-content: space-between;
 
   /* transition: width 0.5s, visibility 0.5s, opacity 0.5s; */
+  -webkit-transition-property: width, visibility, opacity;
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-property: width, visibility, opacity;
+  -moz-transition-duration: 0.5s;
+  -o-transition-property: width, visibility, opacity;
+  -o-transition-duration: 0.5s;
+  transition-property: width, visibility, opacity;
+  transition-duration: 0.5s;
   transition: 0.5s;
+
   visibility: hidden;
   opacity: 0;
 }
@@ -189,6 +198,7 @@
 
 .leftbar.showMenu {
   flex: 0.2;
+  width: 100%;
   visibility: visible;
   opacity: 1;
 }
