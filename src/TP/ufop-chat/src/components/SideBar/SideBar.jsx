@@ -71,13 +71,13 @@ const RightBar = ({ toggle }) => {
 
 function SideBar({ side }) {
 
-  const [toggleSideBar, setToggleSideBar] = useState(true);
+  const { toggleSideBar, toggleMenu, ..._ } = usePages();
 
   if (side.toLowerCase() === 'left')
     return <>
       <LeftBar toggle={toggleSideBar} />
       {/* Hamburger menu icon */}
-      <button className={`hamburger_toggle ${!toggleSideBar ? ' toggled' : ' '}`} onClick={() => setToggleSideBar(!toggleSideBar)}>
+      <button className={`hamburger_toggle ${!toggleSideBar ? ' toggled' : ' '}`} onClick={toggleMenu}>
         <span className={'hamburger_icon'}></span>
       </button>
     </>

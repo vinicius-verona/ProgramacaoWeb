@@ -20,6 +20,7 @@ function sortPages(a, b) {
 export const PagesProvider = ({ children }) => {
   const [chatPageContent, setChatPageContent] = useState(undefined);
   const [updated, setUpdatePages] = useState(false);
+  const [toggleSideBar, setToggleSideBar] = useState(true);
   const [pages, setPages] = useState(Object.keys(sessionStorage).map(key => {
     return {
       id: key,
@@ -49,8 +50,15 @@ export const PagesProvider = ({ children }) => {
     setChatPageContent(chat);
   }
 
+  const toggleMenu = () => {
+    setToggleSideBar(!toggleSideBar);
+  }
+
   return (
-    <PagesContext.Provider value={{ pages: pages, chatPageContent: chatPageContent, updatePages: updatePages, changePage: changePage }}>
+    <PagesContext.Provider value={{
+      pages: pages, chatPageContent: chatPageContent, toggleSideBar: toggleSideBar,
+      updatePages: updatePages, changePage: changePage, toggleMenu: toggleMenu
+    }}>
       {children}
     </PagesContext.Provider>
   );
