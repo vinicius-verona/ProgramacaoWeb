@@ -5,10 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "rm -rf ./server/src/dist && vite build && mv ./dist/ ./server/src/",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "server-dev": "npm --prefix ./server run dev"
+    "server-dev": "npm --prefix ./server run dev",
+    "execute-project": "npm run build && npm run server-dev"
   },
   "dependencies": {
     "dotenv": "^16.3.1",
