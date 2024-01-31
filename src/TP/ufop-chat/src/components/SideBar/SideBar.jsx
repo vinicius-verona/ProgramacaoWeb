@@ -77,8 +77,8 @@ function SideBar({ side }) {
     return <>
       <LeftBar toggle={toggleSideBar} />
       {/* Hamburger menu icon */}
-      <button className={`hamburger_toggle ${!toggleSideBar ? ' toggled' : ' '}`} onClick={toggleMenu}>
-        <span className={'hamburger_icon'}></span>
+      <button className={`toggle ${!toggleSideBar ? ' toggled' : ' '}`} onClick={toggleMenu}>
+        <span className={'toggle_icon'}></span>
       </button>
     </>
   else
