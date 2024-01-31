@@ -5,7 +5,7 @@ Source code and pdfs for Web Programming Course - BCC481
 Professor: Vander Luis de Souza Freitas
 
 ---
-## Content Table
+<!-- ## Content Table
 
 | Class | PDF | Activity |
 | --- | --- | --- |
@@ -17,4 +17,4 @@ Professor: Vander Luis de Souza Freitas
 | 04 - Box Model / Flexbox | [04-box-model](./PDFs/A06_Box_model_Flex_box.pptx.pdf) | T3 Flexbox |
 | 04 - Flexbox | [04-flexbox](./PDFs/A07_Flexbox.pptx.pdf) | T3 Flexbox |
 | 05 - Position and Mobile | [05-position](./PDFs/A08_Position_and_Mobile.pptx.pdf) | None |
-| 06 - Javascript | [06-javascript](./PDFs/A09_JavaScript_Intro.pptx.pdf) | T4 Lights |
+| 06 - Javascript | [06-javascript](./PDFs/A09_JavaScript_Intro.pptx.pdf) | T4 Lights | -->
